@@ -1,0 +1,202 @@
+/* ---------- NAVBAR ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #ff4500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  z-index: 1000;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.nav-logo img {
+  width: 100px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.nav-links a,
+.dropdown {
+  color: #fff;
+  text-decoration: none;
+  padding-right: 20px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  text-decoration: none;
+  background-color: #FFC72C;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+/* ---------- DROPDOWN MENU ---------- */
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  text-decoration: none;
+  background-color: #FFC72C;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffe1cc;
+  color: #ff4500;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Keep dropdown below navbar */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+
+/* /* ---------- MENU PAGE ---------- */
+.menu-section {
+  padding: 50px;
+  text-align: center;
+  background: #fff5ed;
+}
+
+.menu-section h2 {
+  /* margin-bottom: 30px; */
+  color: #333;
+}
+
+.card img {
+  height: 200px;
+  width: 200px;
+  margin-left: 50px;
+}
+
+.card {
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ff6600;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: #ecad81;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.footer-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-content p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Social icons */
+.social-links a {
+  display: inline-block;
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.8rem;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  color: #ffe1cc;
+}
+
+.social-links img {
+  height: 50px;
+  width: 50px;
+}
+
+.footer-bottom {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .footer-links a {
+    margin: 0 6px;
+  }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Pizza | Account</title>
+  <link rel="stylesheet" href="Css/account.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sticky Navigation -->
+
+  <header class="navbar">
+    <div class="nav-logo">
+      <img src="Images/Logo1.png" alt="">City Pizza
+    </div>
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="pizza.html">Pizza</a>
+          <a href="garlicbread.html">Garlic Bread</a>
+          <a href="coldrink.html">Beverages</a>
+        </div>
+      </div>
+      <a href="cart.html">Cart</a>
+      <a href="account.html">Account</a>
+      <a href="index.html" onclick="localStorage.removeItem('userDetails')">Logout</a>
+
+    </nav>
+
+  </header>
+
+  <!-- Account Form Section -->
+  <section class="account-section">
+  <h2>Account Details</h2>
+
+  <!-- Account Form -->
+  <form class="account-form" id="accountForm">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" id="username" placeholder="Enter your name" required>
+    </div>
+
+    <div class="form-group">
+      <label>Mobile Number</label>
+      <input type="text" id="mobile" placeholder="Enter mobile number" required>
+    </div>
+
+    <div class="form-group">
+      <label>Address</label>
+      <textarea id="address" rows="3" placeholder="Enter address" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Outlet</label>
+      <select id="outlet" required>
+        <option value="">Select Outlet</option>
+        <option>Surat</option>
+        <option>Ahmedabad</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+      </select>
+    </div>
+
+    <button type="submit" class="save-btn">Save</button>
+  </form>
+
+  <!-- Display Section -->
+  <div id="displaySection" class="account-display" style="display: none;">
+    <h3>Your Details</h3>
+    <p><strong>Username:</strong> <span id="displayName"></span></p>
+    <p><strong>Mobile:</strong> <span id="displayMobile"></span></p>
+    <p><strong>Address:</strong> <span id="displayAddress"></span></p>
+    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+    <p><strong>Outlet:</strong> <span id="displayOutlet"></span></p>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="social-links">
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><img src="Images/Instagram-removebg-preview.png" alt="" style="width: 40px; height:40px;"></a>
+      <a href="https://www.snapchat.com" target="_blank" aria-label="Snapchat"><img src="Images/Snapchat-removebg-preview.png" alt=""></a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><img src="Images/Facebook-removebg-preview.png" alt=""></a>
+      <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><img src="Images/Youtube-removebg-preview.png" alt=""></a>
+    </div>
+    &nbsp;
+    <p class="footer-bottom"><b>© 2025 City Pizza. All rights reserved.</b></p>
+  </div>
+</footer>
+
+<script>
+const form = document.getElementById('accountForm');
+const displaySection = document.getElementById('displaySection');
+
+// Function to show saved details
+function showDetails(data) {
+  document.getElementById("displayName").textContent = data.name;
+  document.getElementById("displayMobile").textContent = data.mobile;
+  document.getElementById("displayAddress").textContent = data.address;
+  document.getElementById("displayEmail").textContent = data.email;
+  document.getElementById("displayOutlet").textContent = data.outlet;
+
+  form.style.display = "none";
+  displaySection.style.display = "block";
+}
+
+// When form is submitted
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const userData = {
+    name: document.getElementById('username').value,
+    mobile: document.getElementById('mobile').value,
+    address: document.getElementById('address').value,
+    email: document.getElementById('email').value,
+    outlet: document.getElementById('outlet').value
+  };
+
+  // Save in localStorage
+  localStorage.setItem("userDetails", JSON.stringify(userData));
+
+  // Show saved details
+  showDetails(userData);
+});
+
+// When page loads, check if details already exist
+window.onload = function() {
+  const savedData = localStorage.getItem("userDetails");
+  if (savedData) {
+    showDetails(JSON.parse(savedData));
+  }
+};
+</script>
+
+
+</body>
+</html>

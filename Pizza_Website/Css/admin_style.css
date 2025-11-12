@@ -1,0 +1,141 @@
+body {
+  background-color: #fff5f2;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #d32f2f;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.nav-logo img {
+  width: 100px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.navbar-brand,
+.nav-link {
+  color: white !important;
+  font-weight: 600;
+}
+
+.sidebar {
+  background-color: #222;
+  color: white;
+  height: 100vh;
+  padding-top: 20px;
+  position: fixed;
+  width: 220px;
+  transition: all 0.3s ease;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #d32f2f;
+  border-radius: 8px;
+}
+
+.main-content {
+  margin-left: 230px;
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+  height: 620px;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.btn-red {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+}
+
+.btn-red:hover {
+  background-color: #b71c1c;
+  color: white;
+}
+
+/* ---------- RESPONSIVE SECTION ---------- */
+@media (max-width: 992px) {
+  .sidebar {
+    position: fixed;
+    left: -220px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .toggle-btn {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    z-index: 1100;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+}
+
+footer a {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #ff5252;
+}
+
+@media (max-height: 600px) {
+  footer {
+    position: static;
+  }
+}
